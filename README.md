@@ -1,6 +1,6 @@
 # PORT: Preference Optimization via Robust Token-Level Reweighting
 
-**Ding Zhu, Xiukun Wei, Tian Xie, Zhihui Zhu, Xueru Zhang, Mohammad Mahdi Khalili**
+**Ding Zhu, Xiukun Wei, Tian Xie, Zhihui Zhu, Xueru Zhang, Mahdi Khalili**
 
 *NeurIPS 2026* · [Project page](https://khalilimahdi.github.io/publication/port)
 

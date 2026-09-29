@@ -1,0 +1,53 @@
+defaults:
+- _self_
+- model: llama2-7b
+- loss: port
+
+seed: 0
+exp_name: port
+debug: false
+
+# dataset(s) to train on: hh_harmless_noise, alpaca_farm, hh_pairwise_noise, hh, shp
+datasets:
+- hh_harmless_noise
+# fraction of training preference labels flipped (chosen <-> rejected)
+noise_rate: 0.3
+# fraction of each split to use (1.0 = full dataset)
+partial_ratio: 1.0
+
+# total batch size (split across GPUs and gradient accumulation steps)
+batch_size: 64
+eval_batch_size: 16
+gradient_accumulation_steps: 2
+
+lr: 5e-7
+optimizer: AdamW
+warmup_steps: 150
+max_grad_norm: 10.0
+
+max_length: 512
+max_prompt_length: 256
+
+n_epochs: 1
+n_examples: null
+n_eval_examples: 256
+eval_every: 20000
+do_first_eval: true
+sample_during_eval: false
+n_eval_model_samples: 16
+minimum_log_interval_secs: 1.0
+
+# BasicTrainer (single process, model split across GPUs) or FSDPTrainer (multi-GPU)
+trainer: BasicTrainer
+fsdp_port: null
+activation_checkpointing: false
+
+wandb:
+  enabled: false
+  entity: null
+  project: port
+
+# first existing directory is used for caches and checkpoints
+local_dirs:
+- .cache
+local_run_dir: ${get_local_run_dir:${exp_name},${local_dirs}}

@@ -1,0 +1,9 @@
+name_or_path: sshleifer/tiny-gpt2
+tokenizer_name_or_path: null
+# optional path to a policy.pt checkpoint (e.g. from an SFT run) to start from
+archive: null
+# transformer block class, used by FSDPTrainer to shard the model
+block_name: GPT2Block
+policy_dtype: float32
+reference_dtype: float32
+fsdp_policy_mp: null

@@ -1,0 +1,14 @@
+name: port
+
+# DPO temperature
+beta: 0.1
+# weight on the token-level KL term, and whether to use the TDPO2 form of the objective
+alpha: 0.5
+if_tdpo2: true
+
+# CDF-based reweighting; rho = 0.3 and gamma = 1.5 are set in utils/loss.py (port_loss)
+ranking_method: vbon_absolute_difference
+weight_power: 1.0
+min_weight_ratio: 0.1
+# virtual best-of-N size (null = batch size)
+N: null

@@ -1,0 +1,9 @@
+name_or_path: Qwen/Qwen2.5-3B-Instruct
+tokenizer_name_or_path: null
+# optional path to a policy.pt checkpoint (e.g. from an SFT run) to start from
+archive: null
+# transformer block class, used by FSDPTrainer to shard the model
+block_name: Qwen2DecoderLayer
+policy_dtype: bfloat16
+reference_dtype: bfloat16
+fsdp_policy_mp: null
